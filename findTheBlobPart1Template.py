@@ -98,7 +98,7 @@ def findColorSpot(picture, color):
 
 ######################Code Starts Here##################################
 
-
+y=0
 answer=askQuestion("Which blob would you like to find?",["Red", "Green", "Blue", "Yellow"])
 if (answer=="Red"):
     y=1
@@ -121,21 +121,26 @@ while (x==0):
     turnBy(randrange(30,60))
     pic=takePicture()
     show(pic)
+    x=findColorSpot(pic,y)
 #WE NEED SOME SORT OF UNTIL
-
-x=findColorSpot(pic,y)
-print(x)
-
+       
+   
+while (0 < x < 55):
+    turnBy(10)
+    pic=takePicture()
+    show(pic)
+    x=findColorSpot(pic,y)
+    
+while (180 < x < 256):
+    turnBy(350)
+    pic=takePicture()
+    show(pic)
+    x=findColorSpot(pic,y)
+    
 if (55 < x <180):
     forward(2,3)
     pic=takePicture()
     x=findColorSpot(pic,y)
     if (x ==-1):
         print ("You found the blob!")
-       
-   
-if (0 < x < 55):
-    turnBy(10)
     
-if (180 < x < 256):
-    turnBy(350)
