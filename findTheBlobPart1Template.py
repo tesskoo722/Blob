@@ -3,6 +3,8 @@ from Myro import *
 from Graphics import *
 from random import *
 
+#init("sim")
+
 width = 500
 height = 500
 sim = Simulation("Maze World", width, height, Color("gray"))
@@ -97,7 +99,43 @@ def findColorSpot(picture, color):
 ######################Code Starts Here##################################
 
 
+answer=askQuestion("Which blob would you like to find?",["Red", "Green", "Blue", "Yellow"])
+if (answer=="Red"):
+    y=1
+if (answer=="Green"):
+    y=2
+if (answer=="Blue"):
+    y=3
+if (answer=="Yellow"):
+    y=4
 
+#FIND THE BLOB
 
+turnBy(randrange(30,60))   
+pic=takePicture()
+show(pic)  
 
+x=findColorSpot(pic,y)
 
+while (x==0):
+    turnBy(randrange(30,60))
+    pic=takePicture()
+    show(pic)
+#WE NEED SOME SORT OF UNTIL
+
+x=findColorSpot(pic,y)
+print(x)
+
+if (55 < x <180):
+    forward(2,3)
+    pic=takePicture()
+    x=findColorSpot(pic,y)
+    if (x ==-1):
+        print ("You found the blob!")
+       
+   
+if (0 < x < 55):
+    turnBy(10)
+    
+if (180 < x < 256):
+    turnBy(350)
