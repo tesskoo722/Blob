@@ -125,19 +125,19 @@ while (x==0):
 #WE NEED SOME SORT OF UNTIL
        
    
-while (0 < x < 55):
+while (0 < x < 90):
     turnBy(10)
     pic=takePicture()
     show(pic)
     x=findColorSpot(pic,y)
     
-while (180 < x < 256):
+while (150 < x < 256):
     turnBy(350)
     pic=takePicture()
     show(pic)
     x=findColorSpot(pic,y)
     
-if (55 < x <180):
+if (90 < x <150):
     forward(2,3)
     pic=takePicture()
     x=findColorSpot(pic,y)
