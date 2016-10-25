@@ -99,7 +99,7 @@ def findColorSpot(picture, color):
 ######################Code Starts Here##################################
 
 y=0
-answer=askQuestion("Which blob would you like to find?",["Red", "Green", "Blue", "Yellow"])
+answer=askQuestion("Which blob would you like to find, or would you prefer a random one?",["Red", "Green", "Blue", "Yellow", "Random"])
 if (answer=="Red"):
     y=1
 if (answer=="Green"):
@@ -108,6 +108,8 @@ if (answer=="Blue"):
     y=3
 if (answer=="Yellow"):
     y=4
+if (answer=="Random"):
+    y=randrange(1,4)
 
 #FIND THE BLOB
 
